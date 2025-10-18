@@ -1,66 +1,107 @@
 # Technical Writing Objectivity Analyzer
 
-The **Technical Writing Objectivity Analyzer** is a lightweight AI-powered web app that helps writers evaluate how **objective** or **subjective** their writing sounds.  
-It’s designed especially for **technical writers, editors, and students** who want to produce clear, factual, and unbiased content for documentation or professional communication.
+The **Technical Writing Objectivity Analyzer** is a lightweight AI web app that helps writers evaluate how **objective or subjective** their text sounds. It’s designed for technical writers, editors, students, and professionals who want to make their writing clearer, more factual, and less opinion-based.
 
-This project runs entirely **locally** using the open-source **TextBlob** library — no tokens, no API keys, and no internet connection required.
+Built with **Python**, **Streamlit**, and **TextBlob**, this tool runs entirely on your local machine. No internet connection or API key required. It provides instant feedback and practical writing tips to improve clarity and tone.
 
 ---
 
 ## How It Works
 
-When you paste a piece of writing into the app and click **Analyze Objectivity**, the tool uses **TextBlob**, a natural language processing (NLP) library built on top of NLTK, to measure two main qualities:
+When you paste your writing and click “Analyze Objectivity”, the app uses **TextBlob**, an open-source natural language processing (NLP) library, to examine your text.
 
-- **Subjectivity Score** – Indicates how opinionated or emotional the writing is.  
-  Ranges from 0.0 (fully objective) to 1.0 (highly subjective).
-- **Objectivity Score** – The inverse of subjectivity, showing how factual or neutral the text is.  
-  Higher scores indicate writing that is more evidence-based and less emotional.
+It calculates two key metrics:
+- **Subjectivity Score:** How much of your text expresses personal opinion or emotion.
+- **Objectivity Score:** The opposite of subjectivity or how clear, factual, and unbiased your writing is.
 
-TextBlob performs this analysis using a **lexicon-based AI model**, meaning it references a dictionary of words that have been rated for emotional and subjective tone.  
-Each word contributes to the overall score, and TextBlob adjusts for negations (like “not good”) and modifiers (like “very strong”) to create a realistic measure of tone.
+### How the AI Evaluates Objectivity
+TextBlob uses a **lexicon-based AI model**, which means it has a dictionary of words labeled for how emotional or factual they are.  
+When you analyze text:
+1. It scans each word and phrase to detect subjectivity or emotion.  
+2. It averages those values to calculate a *subjectivity score*.  
+3. It then inverts that value to produce an *objectivity score*.  
+
+This lightweight method doesn’t rely on external servers or complex APIs, everything happens locally on your computer.
 
 ---
 
 ## Features
 
-- Local AI processing — no internet or API required  
-- Simple and intuitive Streamlit interface  
-- Color-coded feedback with objectivity and subjectivity scores  
-- Built-in writing improvement tips for better clarity and neutrality  
-- Lightweight setup — only two Python libraries required
+- Simple, modern web interface built with **Streamlit**
+- Instant AI-powered objectivity and subjectivity analysis
+- Practical writing tips for improving tone and clarity
+- Runs completely offline after installation
+- Clean and accessible color scheme (white, orange, and black)
 
 ---
 
 ## Writing Tips for Better Objectivity
 
-To make writing clearer, factual, and professional, the app provides built-in writing tips such as:
+Here are some proven strategies the app recommends for improving writing quality:
 
-1. **Avoid personal phrases** – Skip “I think,” “I feel,” or “in my opinion.”  
-   *Better:* “The data shows that…”  
+1. **Avoid personal phrases** — Skip “I think,” “I feel,” or “in my opinion.”  
+   *Better:* Replace with direct statements like “Results indicate that…”  
 
-2. **Replace emotional adjectives** – Instead of *great* or *terrible*, use measurable terms like *effective* or *inefficient.*  
+2. **Replace emotional adjectives** — Avoid “great,” “terrible,” or “amazing.”  
+   *Better:* Use measurable terms like “effective,” “inefficient,” or “high-performing.”  
 
-3. **Use active voice and clear verbs** – “The team completed the update” is stronger than “The update was completed.”  
+3. **Use active voice** — “The team completed the update” is clearer than “The update was completed.”  
 
-4. **Support claims with evidence** – Use data or results rather than personal opinions.  
+4. **Support claims with data or evidence** — Replace opinions with proof.  
+   *Better:* “Testing reduced errors by 15%.”  
 
-5. **Be precise** – Avoid vague words like “some” or “many”; use quantifiable details where possible.  
-
-These principles help writers maintain a neutral tone and strengthen credibility in documentation or analysis.
-
----
-
-## Tech Stack
-
-- **Python 3** – Core programming language  
-- **Streamlit** – Web app framework for interactivity  
-- **TextBlob** – Natural language processing and sentiment analysis  
+5. **Be specific** — Avoid vague words like “some,” “many,” or “recently.”  
+   *Better:* “42% of users reported the issue within two days.”  
 
 ---
 
-## Installation and Setup
+## Getting Started (For Beginners)
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/adevlin780a/ai-project.git
-   cd ai-project
+Follow these simple steps to download and run the app on your own computer.
+
+### 1. Install Python
+You’ll need **Python 3.9 or higher** installed.  
+- Download it from: [https://www.python.org/downloads/](https://www.python.org/downloads/)  
+- When installing, **check the box that says “Add Python to PATH”** before clicking *Install Now*.
+
+### 2. Download This Project
+You can get the project files in one of two ways:
+- Click the green **“Code”** button on this page and choose **“Download ZIP”**.  
+  Then unzip the file anywhere on your computer.  
+- OR, if you use GitHub Desktop, click **“Open with GitHub Desktop”** to clone the repository.
+
+### 3. Open a Terminal or Command Prompt
+On your computer:
+- **Windows:** Open *Command Prompt* or *PowerShell*  
+- **Mac/Linux:** Open *Terminal*
+
+Use the `cd` command to move into the folder where you unzipped or cloned the project.  
+For example:
+```bash
+cd Downloads/technical-writing-objectivity-analyzer
+```
+
+### 4. Install the Required Packages
+In the terminal, run:
+
+```pip install -r requirements.txt```
+
+
+If you don’t see a `requirements.txt` file, you can install the two needed libraries manually:
+
+```pip install streamlit textblob```
+
+### 5. Run the App
+
+After installation, start the app by running:
+
+```streamlit run app.py```
+
+
+This will open the app in your web browser automatically.
+If not, look for a link like:
+
+```Local URL: http://localhost:8501```
+
+
+Click it or copy it into your browser.
