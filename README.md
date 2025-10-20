@@ -105,3 +105,49 @@ If not, look for a link like:
 
 
 Click it or copy it into your browser.
+
+
+## Troubleshooting (Linux Users)
+
+If you see an error like:
+
+`error: externally-managed-environment` or
+
+`bash: .venv/bin/pip: cannot execute: required file not found`
+
+follow these steps to fix it:
+
+1. Install Full Python and venv Support
+Exit any existing virtual environment first:
+
+```deactivate```
+
+Then install missing packages:
+
+```sudo apt update```
+```sudo apt install python3-full python3-venv python3-pip -y```
+
+2. Remove Any Broken Virtual Environment
+
+```rm -rf .venv```
+
+3. Create a New Virtual Environment
+
+```python3 -m venv .venv```
+```source .venv/bin/activate```
+
+You should now see `(.venv)` in your terminal prompt.
+
+4. Reinstall Dependencies
+
+```pip install --upgrade pip```
+```pip install -r requirements.txt```
+
+5. Run the App Again
+
+```streamlit run app.py```
+
+Your app should now start correctly and open in your browser.
+
+
+
